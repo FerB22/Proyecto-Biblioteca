@@ -1,0 +1,25 @@
+server:
+  port: 8082 # Puerto exclusivo para el microservicio de Reserva
+
+spring:
+  application:
+    name: reserva-service # Nombre para Eureka y el API Gateway
+  
+  datasource:
+    url: jdbc:postgresql://localhost:5432/biblioteca_reserva_db
+    username: postgres
+    password: admin
+    driver-class-name: org.postgresql.Driver
+
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: true
+    properties:
+      hibernate:
+        format_sql: true
+
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:8761/eureka/

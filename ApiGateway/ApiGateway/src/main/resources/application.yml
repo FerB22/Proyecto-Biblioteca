@@ -1,0 +1,13 @@
+server:
+  port: 8080 # Puerto principal por donde entrará tu Frontend
+
+spring:
+  application:
+    name: api-gateway
+
+  cloud:
+    gateway:
+      discovery:
+        locator:
+          enabled: true # Le permite buscar las rutas dinámicamente en Eureka
+          lower-case-service-id: true

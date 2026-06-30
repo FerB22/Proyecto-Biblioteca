@@ -1,0 +1,25 @@
+server:
+  port: 8081 # Puerto independiente para este microservicio
+
+spring:
+  application:
+    name: prestamo-service # Nombre con el que se registrará en Eureka
+  
+  datasource:
+    url: jdbc:postgresql://localhost:5432/biblioteca_prestamo_db # Tu BD local
+    username: tu_usuario_postgres
+    password: tu_password_postgres
+    driver-class-name: org.postgresql.Driver
+
+  jpa:
+    hibernate:
+      ddl-auto: update # Útil para desarrollo, crea las tablas automáticamente
+    show-sql: true
+    properties:
+      hibernate:
+        format_sql: true
+
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:8761/eureka/ # La ruta donde tu compañero levantará Eureka
